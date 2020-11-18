@@ -1,0 +1,104 @@
+
+main form {
+  margin-top: 2%;
+}
+
+#tweet-text {
+  border: 0;
+  outline: 0;
+  background: transparent;
+  border-bottom: solid;
+  border-color: #545149;
+  width: 90vw;
+  margin-bottom: 2%;
+}
+
+.tweet-text {
+  align-items: flex-end;
+}
+
+main form div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: Bungee;
+}
+
+main form button {
+  border: 0;
+  outline: 0;
+  background-color: #4056A1;
+  color: #FFFF;
+}
+
+.counter {
+  font-weight: bold;
+}
+
+.tweet-button {
+  margin-bottom: 5%;
+}
+
+section.tweets {
+  border: solid;
+  border-color: #545149;
+  padding: 2%;
+  margin-bottom: 2%;
+  filter: blur(1px);
+}
+
+section div.account-name {
+  display : none;
+}
+
+section.tweets:hover {
+  filter: none;
+  border: solid;
+  border-color: #545149;
+  padding: 2%;
+  margin-bottom: 2%;
+  box-shadow: 10px 10px 0 0px #b0c4de;
+}
+
+section.tweets:hover div.account-name {
+  display: block;
+}
+
+section div.account-name {
+  display : none;
+}
+
+section.tweets header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 2%;
+  margin-bottom: 5%;
+}
+
+section.tweets div.avatar-name {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+section.tweets header p {
+  margin-left: 6%;
+  margin-right: 10px;
+}
+
+section.tweets footer {
+  font-size: small;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+section.tweets footer button {
+  color: #4056A1;
+  padding: 0;
+  border: none;
+  background: none;
+}

@@ -1,0 +1,41 @@
+body nav {
+  height: 120px;
+  background-color: #4056A1;
+  color: #FFFF;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0; 
+  width: 100%;
+}
+
+.tweeterIcon {
+  margin: 1.5em;
+  font-family: Bungee;
+  font-size: xx-large;
+}
+
+body div.writeATweet {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  margin-right: 1.5em;
+}
+
+p {
+  margin: 0;
+  margin-top: 2%;
+}
+
+.fa-angle-double-down {
+  color: orange;
+  border: none;
+  background: none;
+}
+
+.bold {
+  font-weight:bold;
+}
