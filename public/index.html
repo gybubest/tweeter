@@ -23,6 +23,8 @@
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
     <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+    <script type="text/javascript" src="/scripts/client-helper.js"></script>
+
   </head>
 
   <body>
@@ -33,7 +35,7 @@
       </div>
       <div class="writeATweet">
         <p><span class="bold">Write</span> a new tweet</p>
-        <i class="fas fa-angle-double-down"></i>
+        <a href="#"><i class="fas fa-angle-double-down"></i></a>
       </div>
     </nav>
     <header class="profile-header">
@@ -48,10 +50,15 @@
 
     <!-- Page-specific (main) content here -->
     <main class="container">
+      <section class="validationError">
+        <i class="fas fa-exclamation-triangle"></i>
+        <span class="errorMessage"></span>
+        <i class="fas fa-exclamation-triangle"></i>
+      </section>
       <section class="new-tweet">
-        <form method="POST" action="/tweets/">
+        <form class="tweet-submission" method="POST" action="/tweets/">
           <label for="tweet-text">What are you humming about?</label>
-          <textarea name="text" id="tweet-text"></textarea>
+          <textarea name="text" class="tweet-text"></textarea>
           <div class="tweet-button">
             <button type="submit">Tweet</button>
             <output name="counter" class="counter" for="tweet-text">140</output>
@@ -59,28 +66,6 @@
         </form>
       </section>
       <section class="tweets">
-        <article method="POST" action="/tweets/">
-          <header>
-            <div class="avatar-name">
-              <img src="https://i.imgur.com/nlhLi3I.png">
-              <p>Anna</p>
-            </div>
-            <div class="account-name">
-              <p>@annaKarenina</p>
-            </div>
-          </header>
-          <textarea name="text" id="tweet-text">Hello, world!</textarea>
-          <footer>
-            <div>
-              <output >1 day ago</output>
-            </div>
-            <div>
-              <button type="submit"><i class="fas fa-flag"></i></button>
-              <button type="submit"><i class="fas fa-retweet"></i></button>
-              <button type="submit"><i class="fas fa-heart"></i></button>  
-            </div>
-          </footer>
-        </article>
       </section>
     </main>
   </body>

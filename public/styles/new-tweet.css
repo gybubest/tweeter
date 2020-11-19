@@ -3,7 +3,21 @@ main form {
   margin-top: 2%;
 }
 
-#tweet-text {
+main section.new-tweet {
+  display: none;
+}
+
+main section.validationError {
+  color: orange;
+  border: solid;
+  border-color: orange;
+  width: 600px;
+  margin: 50px;
+  padding: 50px;
+  display: none;
+}
+
+textarea.tweet-text {
   border: 0;
   outline: 0;
   background: transparent;
@@ -11,9 +25,11 @@ main form {
   border-color: #545149;
   width: 90vw;
   margin-bottom: 2%;
+  overflow: hidden;
+  resize: none;
 }
 
-.tweet-text {
+textarea.tweet-text {
   align-items: flex-end;
 }
 
@@ -39,7 +55,11 @@ main form button {
   margin-bottom: 5%;
 }
 
-section.tweets {
+section div.account-name {
+  display : none;
+}
+
+section article.tweet {
   border: solid;
   border-color: #545149;
   padding: 2%;
@@ -47,11 +67,7 @@ section.tweets {
   filter: blur(1px);
 }
 
-section div.account-name {
-  display : none;
-}
-
-section.tweets:hover {
+section article.tweet:hover {
   filter: none;
   border: solid;
   border-color: #545149;
@@ -60,7 +76,7 @@ section.tweets:hover {
   box-shadow: 10px 10px 0 0px #b0c4de;
 }
 
-section.tweets:hover div.account-name {
+section article.tweet:hover div.account-name {
   display: block;
 }
 
@@ -73,7 +89,7 @@ section.tweets header {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  margin-top: 2%;
+  margin-top: 5%;
   margin-bottom: 5%;
 }
 
