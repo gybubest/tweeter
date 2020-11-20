@@ -70,6 +70,10 @@ section.tweets div.account-name {
   display : none;
 }
 
+div.footer-buttons {
+  display: none;
+}
+
 article.tweet {
   border: solid;
   border-color: #404040;
@@ -84,6 +88,10 @@ article.tweet:hover {
 }
 
 article.tweet:hover div.account-name {
+  display: block;
+}
+
+article.tweet:hover div.footer-buttons {
   display: block;
 }
 

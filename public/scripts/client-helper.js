@@ -20,7 +20,7 @@ const createTweetElement = function(data) {
       <div>
         <output class="timestamp">${moment(data.created_at).fromNow()}</output>
       </div>
-      <div>
+      <div class="footer-buttons">
         <button type="submit"><i class="fas fa-flag"></i></button>
         <button type="submit"><i class="fas fa-retweet"></i></button>
         <button type="submit"><i class="fas fa-heart"></i></button>  
