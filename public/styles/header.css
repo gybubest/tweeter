@@ -1,16 +1,27 @@
-.profile-header {
+header.profile-header {
   height: 400px;
-  width: 100vw;
-  background-color: #ffa500;
+  background-color: #FF9933;
   background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-light.png");
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 120px;
   margin-bottom: 20px;
+}
+
+div img.avatar {
+  width: 90%;
+  margin-left: 5%;
 }
 
 .normal-font {
   font-weight: normal;
+}
+
+@media (min-width: 1024px) {
+  header.profile-header {
+    margin-top: 50px;
+    width: 32.2%;
+    border-radius: 25px;
+  }
 }

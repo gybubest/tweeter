@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <!-- Meta Information -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tweeter - Home Page</title>
 
     <!-- External CSS -->
@@ -19,7 +20,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://kit.fontawesome.com/33fb834f05.js" crossorigin="anonymous"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous"></script>
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
     <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
@@ -29,9 +30,9 @@
 
   <body>
     <!-- Top nav bar (fixed) -->
-    <nav>
+    <nav class="navigation">
       <div>
-        <span class="tweeterIcon">tweeter</span>
+        <span class="tweeterIcon">Tweeter</span>
       </div>
       <div class="writeATweet">
         <p><span class="bold">Write</span> a new tweet</p>
@@ -40,9 +41,8 @@
     </nav>
     <header class="profile-header">
       <div>
-          <img src="/images/profile-hex.png"> 
+          <img class="avatar" src="/images/profile-hex.png"> 
       </div>
-      <br>
       <div>
           <h2>Your <span class="normal-font">Name</span></h2>
       </div>
@@ -50,6 +50,7 @@
 
     <!-- Page-specific (main) content here -->
     <main class="container">
+      <section class="margin"></section>
       <section class="validationError">
         <i class="fas fa-exclamation-triangle"></i>
         <span class="errorMessage"></span>
@@ -60,12 +61,15 @@
           <label for="tweet-text">What are you humming about?</label>
           <textarea name="text" class="tweet-text"></textarea>
           <div class="tweet-button">
-            <button type="submit">Tweet</button>
-            <output name="counter" class="counter" for="tweet-text">140</output>
+            <button class="post-button" type="submit">Tweet</button>
+            <output class="counter" for="tweet-text">140</output>
           </div>
         </form>
       </section>
       <section class="tweets">
+      </section>
+      <section>
+        <button class="back-to-top" type="submit"><i class="fas fa-angle-double-up"></i></button>
       </section>
     </main>
   </body>

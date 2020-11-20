@@ -15,12 +15,12 @@ html {
  */
 
 body {
-  color: #545149;
-  background-color: #f4f1ec;
+  color: #404040;
+  background-color: #F5F5F5;
   font-size: 24px;
   font-family:  Source Sans Pro;
   display: flex;
-  flex-direction: column;
+  flex-flow: row wrap;
   justify-content: center;
   align-items: center;
 }
@@ -28,12 +28,32 @@ body {
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
-main {
-  width: 90vw;
-  background-color: #f4f1ec;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+
+nav.navigation, header.profile-header {
+  width: 100%;
+}
+main.container {
+  width: 90%;
 }
 
+section button.back-to-top {
+  display: none;
+  background: #FF9933;
+  border: none;
+  border-radius: 50%;
+  position: fixed; 
+  bottom: 20px;
+  right: 20px; 
+  z-index: 99; 
+  font-size: 36px;
+}
+
+i.fa-angle-double-up {
+  color: #F5F5F5;
+}
+
+@media (min-width: 1024px) {
+  body {
+    align-items: normal;
+  }
+}

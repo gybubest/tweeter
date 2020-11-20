@@ -1,27 +1,32 @@
+let tweetTimes = {};
+
 const createTweetElement = function(data) {
+  const tweetId = Object.keys(tweetTimes).length;
+  tweetTimes[tweetId] = data.created_at;
+
   const tweet = `
-  <article class="tweet" method="POST" action="/tweets/">
-  <header>
-    <div class="avatar-name">
-      <img src="${data.user.avatars}">
-      <p>${data.user.name}</p>
-    </div>
-    <div class="account-name">
-      <p>${data.user.handle}</p>
-    </div>
-  </header>
-  <textarea name="text" class="tweet-text">${data.content.text}</textarea>
-  <footer>
-    <div>
-      <output >${data.created_at}</output>
-    </div>
-    <div>
-      <button type="submit"><i class="fas fa-flag"></i></button>
-      <button type="submit"><i class="fas fa-retweet"></i></button>
-      <button type="submit"><i class="fas fa-heart"></i></button>  
-    </div>
-  </footer>
-</article>
+  <article id="${tweetId}" class="tweet" method="POST" action="/tweets/">
+    <header>
+      <div class="avatar-name">
+        <img src="${data.user.avatars}">
+        <p>${data.user.name}</p>
+      </div>
+      <div class="account-name">
+        <p>${data.user.handle}</p>
+      </div>
+    </header>
+    <textarea class="tweet-text" readonly>${data.content.text}</textarea>
+    <footer>
+      <div>
+        <output class="timestamp">${moment(data.created_at).fromNow()}</output>
+      </div>
+      <div>
+        <button type="submit"><i class="fas fa-flag"></i></button>
+        <button type="submit"><i class="fas fa-retweet"></i></button>
+        <button type="submit"><i class="fas fa-heart"></i></button>  
+      </div>
+    </footer>
+  </article>
   `;
   return tweet;
 }
@@ -48,3 +53,10 @@ const submitTweet = function(event, action) {
   .then(res => action(res))
   .catch(err => console.log(err))
 };
+
+const updateTimer = setInterval(() => {
+  for (const tweetId in tweetTimes) {
+    $(`#${tweetId} .timestamp`).val(moment(tweetTimes[tweetId]).fromNow());
+  }
+
+}, 15000);
