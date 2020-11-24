@@ -31,10 +31,17 @@ const createTweetElement = function(data) {
   return tweet;
 }
 
-const renderTweets = function(tweets, action) {
+const renderLastTweet = function(tweets, action) {
   const tweet = Object.values(tweets).pop();
   const $tweet = action(tweet);
   $('.tweets').prepend($tweet);
+}
+
+const renderTweets = function(tweets, action) {
+  for (const tweet of tweets) {
+    const $tweet = action(tweet);
+    $('.tweets').prepend($tweet);
+  }
 }
 
 const loadTweets = (action) => {

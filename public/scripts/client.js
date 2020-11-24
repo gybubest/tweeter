@@ -3,7 +3,9 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
+
 $(document).ready(() => {
+  
   $("form.tweet-submission").submit(function(event) {
     event.preventDefault();
     $('section.validationError').slideUp(1);
@@ -19,7 +21,7 @@ $(document).ready(() => {
       $('section.validationError').slideDown(1);
       return $('form.tweet-submission > textarea.tweet-text').val('').focus();
     }
-    const createHTMLPost = tweets => renderTweets(tweets, createTweetElement);
+    const createHTMLPost = tweets => renderLastTweet(tweets, createTweetElement);
     const fetchAndUpdate = () => loadTweets(createHTMLPost);
     submitTweet(event, fetchAndUpdate);
     $('main section.new-tweet').slideUp();
@@ -46,6 +48,10 @@ $(document).ready(() => {
   $('section button.back-to-top').click(function() {
     $("html, body").animate({scrollTop: 0});
     $('main section.new-tweet').slideDown();
+ });
+
+ loadTweets(tweets => {
+  renderTweets(tweets, t => { return createTweetElement(t); }) 
  });
 
 });
